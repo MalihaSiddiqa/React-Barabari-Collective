@@ -1,0 +1,118 @@
+/* General Setup */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Flexbox setup to center the cards on the screen */
+.login-container, .dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+/* Card layout for both Login and Dashboard */
+.login-card, .dashboard-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+/* Grouping the input and icon together neatly */
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+/* Styling the beautiful Lucide Icons inside the input group and card */
+.input-group svg, .dashboard-icon {
+  color: #666;
+}
+
+.dashboard-icon {
+  margin-bottom: 10px;
+}
+
+.dashboard-card span {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Basic Button Styling */
+.signin-btn, .signout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+/* Blue styling for sign-in */
+.signin-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.signin-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Red/Dark styling for sign-out */
+.signout-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.signout-btn:hover {
+  background-color: #bd2130;
+}
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.nav-links a.active {
+  font-weight: bold;
+  color: #333;
+}
