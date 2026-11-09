@@ -1,0 +1,48 @@
+import { useEffect, useState } from 'react';
+import { useAuth } from '../Context/AuthContext';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { User, LogIn } from 'lucide-react';
+
+export function Login(){
+const [name,setname]=useState[""];
+const auth=useAuth();
+const navigation=useNavigate();
+const location=useLocation();
+const redirectPath = location.state?.path || '/';
+
+  console.log("location from login",location);
+  console.log("redirectPath variable contains:",redirectPath);
+const handleLogin=(e)=>{
+    if (e)e.preventDefault();
+    if (!name.trim()) return;
+    auth.login(name);
+    navigation(redirectPath, { replace: true });
+
+}
+useEffect(()=>{
+    console.log("Observed auth.user changed: " , auth.user)
+})
+return (
+    <div className="login-container">
+      <div className="login-card">
+        <h1>Welcome Back</h1>
+        <form onSubmit={handleLogin}>
+        <div className="input-group">
+          <User size={18} />
+          <input
+            type="text"
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
+          />
+        </div>
+        <button onClick={handleLogin} className="signin-btn">
+          <LogIn size={16} /> Sign In
+        </button>
+        </form>
+      </div>
+    </div>
+  );
+
+}
